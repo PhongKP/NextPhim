@@ -1,0 +1,201 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: 88vh;
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transform: scale(1.02);
+  }
+}
+
+// ── Gradient Overlays ──
+.hero-gradient-side {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--color-bg-primary), rgba(6, 6, 11, 0.5) 50%, transparent);
+}
+
+.hero-gradient-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-bg-primary), rgba(6, 6, 11, 0.2) 50%, transparent);
+}
+
+.hero-gradient-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--color-bg-primary) 0%, transparent 100%);
+}
+
+// ── Content ──
+.hero-content {
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+  right: 0;
+  padding: 0 1.25rem;
+  max-width: 680px;
+
+  @media (min-width: 768px) {
+    bottom: 22%;
+    padding: 0 2.5rem;
+  }
+}
+
+// ── Badges ──
+.hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.375rem;
+  color: #fff;
+
+  &--quality {
+    background: var(--color-accent);
+  }
+
+  &--lang {
+    background: rgba(37, 99, 235, 0.9);
+  }
+}
+
+.hero-meta {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+}
+
+.hero-dot {
+  color: #6b7280;
+}
+
+// ── Title ──
+.hero-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 0.625rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 1px 6px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.hero-origin {
+  font-size: 1rem;
+  color: #d1d5db;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+// ── Categories ──
+.hero-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.hero-cat-tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+// ── Buttons ──
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &--primary {
+    background: var(--color-accent);
+    color: #fff;
+
+    &:hover {
+      background: var(--color-accent-hover);
+      transform: scale(1.04);
+      box-shadow: 0 20px 40px -8px rgba(229, 9, 20, 0.3);
+    }
+  }
+
+  &--secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}

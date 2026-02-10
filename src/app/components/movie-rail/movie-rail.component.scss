@@ -1,0 +1,181 @@
+:host {
+  display: block;
+}
+
+.rail-section {
+  margin-bottom: 2.5rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 3.5rem;
+  }
+}
+
+// ── Header ──
+.rail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0 1.25rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2.5rem;
+  }
+}
+
+.rail-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rail-accent-bar {
+  width: 4px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.rail-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+// ── Scrollable Container ──
+.rail-scroll-wrapper {
+  position: relative;
+
+  &:hover .scroll-arrow {
+    opacity: 1;
+  }
+}
+
+.rail-container {
+  display: flex;
+  gap: 0.875rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 1.25rem 0.75rem;
+
+  // Hide scrollbar
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 2.5rem 0.75rem;
+  }
+}
+
+::ng-deep .rail-card {
+  flex-shrink: 0;
+  width: 145px;
+  min-width: 145px;
+  max-width: 145px;
+
+  @media (min-width: 640px) {
+    width: 158px;
+    min-width: 158px;
+    max-width: 158px;
+  }
+
+  @media (min-width: 768px) {
+    width: 185px;
+    min-width: 185px;
+    max-width: 185px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 195px;
+    min-width: 195px;
+    max-width: 195px;
+  }
+}
+
+// ── Scroll Arrows ──
+.scroll-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    width: 56px;
+  }
+
+  &--left {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-primary), rgba(6, 6, 11, 0.8), transparent);
+  }
+
+  &--right {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-primary), rgba(6, 6, 11, 0.8), transparent);
+  }
+}
+
+.arrow-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: #fff;
+  }
+}

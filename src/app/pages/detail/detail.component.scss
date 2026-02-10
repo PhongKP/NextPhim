@@ -1,0 +1,378 @@
+:host {
+  display: block;
+}
+
+// ── Loading Container ──
+.detail-loading {
+  padding-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+// ── Backdrop ──
+.detail-backdrop {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+
+  @media (min-width: 768px) {
+    height: 60vh;
+  }
+}
+
+.detail-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.detail-backdrop-gradient-top {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-bg-primary), rgba(6, 6, 11, 0.6) 50%, transparent);
+}
+
+.detail-backdrop-gradient-side {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(6, 6, 11, 0.8), transparent);
+}
+
+// ── Content ──
+.detail-content {
+  position: relative;
+  z-index: 10;
+  margin-top: -12rem;
+  padding: 0 1rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 768px) {
+    margin-top: -16rem;
+    padding: 0 3rem;
+  }
+}
+
+.detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+// ── Poster ──
+.detail-poster {
+  flex-shrink: 0;
+  width: 200px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 280px;
+    margin: 0;
+  }
+}
+
+.detail-poster-img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+// ── Info ──
+.detail-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
+}
+
+.detail-origin-name {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+// ── Meta Badges ──
+.detail-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.meta-badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  color: #fff;
+
+  &--accent {
+    background: var(--color-accent);
+  }
+
+  &--blue {
+    background: #2563eb;
+  }
+
+  &--neutral {
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    font-weight: 400;
+  }
+
+  &--green {
+    background: rgba(21, 128, 61, 0.5);
+    color: #86efac;
+    border: 1px solid rgba(21, 128, 61, 0.3);
+    font-weight: 400;
+  }
+}
+
+// ── Categories ──
+.detail-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.detail-cat-link {
+  padding: 0.25rem 0.75rem;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
+
+// ── Credits ──
+.detail-credits {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-credit-row {
+  font-size: 14px;
+}
+
+.credit-label {
+  color: var(--color-text-muted);
+}
+
+.credit-value {
+  color: var(--color-text-secondary);
+}
+
+// ── Description ──
+.detail-desc {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+// ── Play Button ──
+.detail-play-section {
+  margin-top: 1.5rem;
+}
+
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--color-accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 16px 40px -8px rgba(229, 9, 20, 0.25);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}
+
+// ── Video Player ──
+.player-section {
+  margin-top: 2.5rem;
+}
+
+.player-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.player-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+// ── Episode Selector ──
+.episodes-section {
+  margin-top: 2.5rem;
+}
+
+.server-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+.server-tab {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--active {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  &--inactive {
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+
+    &:hover {
+      background: var(--color-bg-hover);
+    }
+  }
+}
+
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+
+  @media (min-width: 640px) { grid-template-columns: repeat(6, 1fr); }
+  @media (min-width: 768px) { grid-template-columns: repeat(8, 1fr); }
+  @media (min-width: 1024px) { grid-template-columns: repeat(12, 1fr); }
+}
+
+.episode-btn {
+  padding: 0.625rem 0.75rem;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &--active {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 8px 24px -4px rgba(229, 9, 20, 0.2);
+  }
+
+  &--inactive {
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      background: var(--color-bg-hover);
+      color: #fff;
+    }
+  }
+}
+
+// ── Trailer ──
+.trailer-section {
+  margin-top: 2.5rem;
+}
+
+.trailer-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 48rem;
+  aspect-ratio: 16/9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.trailer-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
