@@ -147,6 +147,7 @@ export class CategoryListComponent implements OnInit, OnDestroy {
   // Filters
   filters: Partial<SearchFilters> = {
     page: 1,
+    limit: 12,
     sortField: 'modified.time',
     sortType: 'desc',
     category: '',
@@ -245,6 +246,7 @@ export class CategoryListComponent implements OnInit, OnDestroy {
   resetFilters(): void {
     this.filters = {
       page: 1,
+      limit: 12,
       sortField: 'modified.time',
       sortType: 'desc',
       category: '',
@@ -282,21 +284,22 @@ export class CategoryListComponent implements OnInit, OnDestroy {
   }
 
   private fetchMovies(slug: string, page: number) {
+    const limit = 12;
     switch (slug) {
       case 'phim-bo':
-        return this.movieService.getSeriesList(page);
+        return this.movieService.getSeriesList(page, limit);
       case 'phim-le':
-        return this.movieService.getSingleMovies(page);
+        return this.movieService.getSingleMovies(page, limit);
       case 'hoat-hinh':
-        return this.movieService.getAnimationList(page);
+        return this.movieService.getAnimationList(page, limit);
       case 'tv-shows':
-        return this.movieService.getTvShows(page);
+        return this.movieService.getTvShows(page, limit);
       default:
         // For custom categories/countries, use filters
         if (this.isCountryPage) {
-          return this.movieService.getByCountry(slug, { page });
+          return this.movieService.getByCountry(slug, { page, limit });
         }
-        return this.movieService.getByCategory(slug, { page });
+        return this.movieService.getByCategory(slug, { page, limit });
     }
   }
 

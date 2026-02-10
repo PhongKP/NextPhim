@@ -47,7 +47,7 @@ import { RouterLink } from '@angular/router';
 
         <div class="footer-bottom">
           <p class="footer-copyright">
-            © 2026 NextPhim. Dữ liệu phim được cung cấp bởi KKPhim API.
+            © 2026 NextPhim. All rights reserved.
           </p>
         </div>
       </div>
